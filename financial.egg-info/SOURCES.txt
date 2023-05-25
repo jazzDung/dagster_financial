@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+financial/__init__.py
+financial/jobs.py
+financial.egg-info/PKG-INFO
+financial.egg-info/SOURCES.txt
+financial.egg-info/dependency_links.txt
+financial.egg-info/requires.txt
+financial.egg-info/top_level.txt

@@ -1,0 +1,252 @@
+2023-05-25 21:24:20 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to get state
+2023-05-25 21:24:20 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to set attempt sync config
+2023-05-25 21:24:20 [32mINFO[m i.a.c.t.s.DefaultTaskQueueMapper(getTaskQueue):31 - Called DefaultTaskQueueMapper getTaskQueue for geography auto
+2023-05-25 21:24:20 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):136 - Docker volume job log path: /tmp/workspace/41/0/logs.log
+2023-05-25 21:24:20 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):141 - Executing worker wrapper. Airbyte version: 0.44.1
+2023-05-25 21:24:20 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to save workflow id for cancellation
+2023-05-25 21:24:20 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to get the source for heartbeat
+2023-05-25 21:24:20 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to get the source definition
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.ReplicationWorkerFactory(create):95 - Setting up source...
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.ReplicationWorkerFactory(create):99 - Setting up destination...
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable METRIC_CLIENT: ''
+2023-05-25 21:24:20 [33mWARN[m i.a.m.l.MetricClientFactory(initialize):60 - Metric client is already initialized to 
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.ReplicationWorkerFactory(create):108 - Setting up replication worker...
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(run):161 - start sync worker. job id: 41 attempt id: 0
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(run):163 - Committing states from replication activity
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(run):166 - Committing stats from replication activity
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(run):182 - configured sync modes: {null.organization=full_refresh - overwrite, null.organization_overview=full_refresh - overwrite, null.price_history=full_refresh - overwrite}
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START REPLICATION -----
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:20 [32mINFO[m i.a.w.i.DefaultAirbyteDestination(start):92 - Running destination...
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/destination-postgres:0.3.27 exists...
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - airbyte/destination-postgres:0.3.27 was found locally.
+2023-05-25 21:24:20 [32mINFO[m i.a.w.p.DockerProcessFactory(create):133 - Creating docker container = destination-postgres-write-41-0-rqmrl with resources io.airbyte.config.ResourceRequirements@dd41ec8[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2023-05-25 21:24:20 [32mINFO[m i.a.w.p.DockerProcessFactory(create):184 - Preparing command: docker run --rm --init -i -w /data/41/0 --log-driver none --name destination-postgres-write-41-0-rqmrl --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=airbyte/destination-postgres:0.3.27 -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e USE_STREAM_CAPABLE_STATE=true -e FIELD_SELECTION_WORKSPACES= -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT= -e AIRBYTE_VERSION=0.44.1 -e WORKER_JOB_ID=41 airbyte/destination-postgres:0.3.27 write --config destination_config.json --catalog destination_catalog.json
+2023-05-25 21:24:20 [32mINFO[m i.a.w.i.VersionedAirbyteMessageBufferedWriterFactory(createWriter):41 - Writing messages to protocol version 0.2.0
+2023-05-25 21:24:20 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):181 - Reading messages from protocol version 0.2.0
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SIDECAR_KUBE_CPU_LIMIT: '2.0'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SOCAT_KUBE_CPU_LIMIT: '2.0'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SIDECAR_KUBE_CPU_REQUEST: '0.1'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable SOCAT_KUBE_CPU_REQUEST: '0.1'
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable LAUNCHDARKLY_KEY: ''
+2023-05-25 21:24:20 [32mINFO[m i.a.c.EnvConfigs(getEnvOrDefault):1222 - Using default value for environment variable FEATURE_FLAG_CLIENT: ''
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - Checking if jazzdung/source-tcbs:fast exists...
+2023-05-25 21:24:20 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - jazzdung/source-tcbs:fast was found locally.
+2023-05-25 21:24:20 [32mINFO[m i.a.w.p.DockerProcessFactory(create):133 - Creating docker container = source-tcbs-read-41-0-axuac with resources io.airbyte.config.ResourceRequirements@52c01899[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2023-05-25 21:24:20 [32mINFO[m i.a.w.p.DockerProcessFactory(create):184 - Preparing command: docker run --rm --init -i -w /data/41/0 --log-driver none --name source-tcbs-read-41-0-axuac --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e WORKER_CONNECTOR_IMAGE=jazzdung/source-tcbs:fast -e AUTO_DETECT_SCHEMA=true -e LAUNCHDARKLY_KEY= -e SOCAT_KUBE_CPU_REQUEST=0.1 -e SOCAT_KUBE_CPU_LIMIT=2.0 -e USE_STREAM_CAPABLE_STATE=true -e FIELD_SELECTION_WORKSPACES= -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e APPLY_FIELD_SELECTION=false -e WORKER_JOB_ATTEMPT=0 -e OTEL_COLLECTOR_ENDPOINT=http://host.docker.internal:4317 -e FEATURE_FLAG_CLIENT= -e AIRBYTE_VERSION=0.44.1 -e WORKER_JOB_ID=41 jazzdung/source-tcbs:fast read --config source_config.json --catalog source_catalog.json
+2023-05-25 21:24:20 [32mINFO[m i.a.w.i.VersionedAirbyteStreamFactory(create):181 - Reading messages from protocol version 0.2.0
+2023-05-25 21:24:20 [32mINFO[m i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):94 - Starting source heartbeat check. Will check every 1 minutes.
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$8):376 - Replication thread started.
+2023-05-25 21:24:20 [32mINFO[m i.a.w.g.DefaultReplicationWorker(lambda$readFromDstRunnable$4):310 - Destination output thread started.
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.d.p.PostgresDestination(main):98 starting destination: class io.airbyte.integrations.destination.postgres.PostgresDestination
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.b.IntegrationCliParser(parseOptions):126 integration args: {catalog=destination_catalog.json, write=null, config=destination_config.json}
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.b.IntegrationRunner(runInternal):108 Running integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.b.IntegrationRunner(runInternal):109 Command: WRITE
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.b.IntegrationRunner(runInternal):110 Integration config: IntegrationConfig{command=WRITE, configPath='destination_config.json', catalogPath='destination_catalog.json', statePath='null'}
+2023-05-25 21:24:21 [43mdestination[0m > WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-05-25 21:24:21 [43mdestination[0m > WARN c.n.s.JsonMetaSchema(newValidator):278 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-05-25 21:24:21 [44msource[0m > Starting syncing SourceTcbs
+2023-05-25 21:24:21 [43mdestination[0m > INFO i.a.i.b.s.SshTunnel(getInstance):204 Starting connection with method: NO_TUNNEL
+2023-05-25 21:24:21 [43mdestination[0m > INFO c.z.h.HikariDataSource(<init>):80 HikariPool-1 - Starting...
+2023-05-25 21:24:22 [43mdestination[0m > INFO c.z.h.HikariDataSource(<init>):82 HikariPool-1 - Start completed.
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$toWriteConfig$0):98 Write config: WriteConfig{streamName=organization, namespace=financial_raw, outputSchemaName=financial_raw, tmpTableName=_airbyte_tmp_jwc_organization, outputTableName=_airbyte_raw_organization, syncMode=overwrite}
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$toWriteConfig$0):98 Write config: WriteConfig{streamName=price_history, namespace=financial_raw, outputSchemaName=financial_raw, tmpTableName=_airbyte_tmp_bvu_price_history, outputTableName=_airbyte_raw_price_history, syncMode=overwrite}
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$toWriteConfig$0):98 Write config: WriteConfig{streamName=organization_overview, namespace=financial_raw, outputSchemaName=financial_raw, tmpTableName=_airbyte_tmp_ejl_organization_overview, outputTableName=_airbyte_raw_organization_overview, syncMode=overwrite}
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.b.BufferedStreamConsumer(startTracked):146 class io.airbyte.integrations.destination.buffered_stream_consumer.BufferedStreamConsumer started.
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):134 Preparing raw tables in destination started for 3 streams
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):139 Preparing raw table in destination started for stream organization. schema: financial_raw, table name: _airbyte_raw_organization
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):139 Preparing raw table in destination started for stream price_history. schema: financial_raw, table name: _airbyte_raw_price_history
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):139 Preparing raw table in destination started for stream organization_overview. schema: financial_raw, table name: _airbyte_raw_organization_overview
+2023-05-25 21:24:22 [43mdestination[0m > INFO i.a.i.d.j.JdbcBufferedConsumerFactory(lambda$onStartFunction$1):152 Preparing raw tables in destination completed.
+2023-05-25 21:24:22 [44msource[0m > Marking stream organization as STARTED
+2023-05-25 21:24:22 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049862691.978, "stream_status": {"stream_descriptor": {"name": "organization", "namespace": null}, "status": "STARTED"}}}
+2023-05-25 21:24:22 [44msource[0m > Syncing stream: organization 
+2023-05-25 21:24:23 [44msource[0m > Marking stream organization as RUNNING
+2023-05-25 21:24:23 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049863331.454, "stream_status": {"stream_descriptor": {"name": "organization", "namespace": null}, "status": "RUNNING"}}}
+2023-05-25 21:24:23 [44msource[0m > Read 10 records from organization stream
+2023-05-25 21:24:23 [44msource[0m > Marking stream organization as STOPPED
+2023-05-25 21:24:23 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049863333.058, "stream_status": {"stream_descriptor": {"name": "organization", "namespace": null}, "status": "COMPLETE"}}}
+2023-05-25 21:24:23 [44msource[0m > Finished syncing organization
+2023-05-25 21:24:23 [44msource[0m > SourceTcbs runtimes:
+Syncing stream organization 0:00:00.641542
+2023-05-25 21:24:24 [44msource[0m > Marking stream price_history as STARTED
+2023-05-25 21:24:24 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049864623.5981, "stream_status": {"stream_descriptor": {"name": "price_history", "namespace": null}, "status": "STARTED"}}}
+2023-05-25 21:24:24 [44msource[0m > Syncing stream: price_history 
+2023-05-25 21:24:25 [44msource[0m > Marking stream price_history as RUNNING
+2023-05-25 21:24:26 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049865451.184, "stream_status": {"stream_descriptor": {"name": "price_history", "namespace": null}, "status": "RUNNING"}}}
+2023-05-25 21:24:26 [44msource[0m > Read 10 records from price_history stream
+2023-05-25 21:24:26 [44msource[0m > Marking stream price_history as STOPPED
+2023-05-25 21:24:26 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049866294.896, "stream_status": {"stream_descriptor": {"name": "price_history", "namespace": null}, "status": "COMPLETE"}}}
+2023-05-25 21:24:26 [44msource[0m > Finished syncing price_history
+2023-05-25 21:24:26 [44msource[0m > SourceTcbs runtimes:
+Syncing stream organization 0:00:00.641542
+Syncing stream price_history 0:00:01.672008
+2023-05-25 21:24:27 [44msource[0m > Marking stream organization_overview as STARTED
+2023-05-25 21:24:27 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049867560.972, "stream_status": {"stream_descriptor": {"name": "organization_overview", "namespace": null}, "status": "STARTED"}}}
+2023-05-25 21:24:27 [44msource[0m > Syncing stream: organization_overview 
+2023-05-25 21:24:28 [44msource[0m > Marking stream organization_overview as RUNNING
+2023-05-25 21:24:29 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049868256.618, "stream_status": {"stream_descriptor": {"name": "organization_overview", "namespace": null}, "status": "RUNNING"}}}
+2023-05-25 21:24:29 [44msource[0m > Read 10 records from organization_overview stream
+2023-05-25 21:24:29 [44msource[0m > Marking stream organization_overview as STOPPED
+2023-05-25 21:24:29 [44msource[0m > {"type": "TRACE", "trace": {"type": "STREAM_STATUS", "emitted_at": 1685049869050.274, "stream_status": {"stream_descriptor": {"name": "organization_overview", "namespace": null}, "status": "COMPLETE"}}}
+2023-05-25 21:24:29 [44msource[0m > Finished syncing organization_overview
+2023-05-25 21:24:29 [44msource[0m > SourceTcbs runtimes:
+Syncing stream organization 0:00:00.641542
+Syncing stream organization_overview 0:00:01.489783
+Syncing stream price_history 0:00:01.672008
+2023-05-25 21:24:29 [44msource[0m > Finished syncing SourceTcbs
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$8):438 - Source has no more messages, closing connection.
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$8):447 - Total records read: 30 (7 KB)
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$8):456 - Schema validation was performed to a max of 10 records with errors per stream.
+2023-05-25 21:24:29 [33mWARN[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$6):458 - Schema validation errors found for stream _price_history. Error messages: [$.start_date: is missing but it is required, $.end_date: is missing but it is required]
+2023-05-25 21:24:29 [33mWARN[m i.a.w.g.DefaultReplicationWorker(lambda$readFromSrcAndWriteToDstRunnable$6):458 - Schema validation errors found for stream _organization_overview. Error messages: [$.deltaInYear: null found, number expected, $.establishedYear: null found, string expected, $.stockRating: null found, number expected]
+2023-05-25 21:24:29 [32mINFO[m i.a.w.i.HeartbeatTimeoutChaperone(runWithHeartbeatThread):111 - thread status... heartbeat thread: false , replication thread: true
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(replicate):266 - Waiting for source and destination threads to complete.
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(replicate):271 - One of source or destination thread complete. Waiting on the other.
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.b.FailureTrackingAirbyteMessageConsumer(close):80 Airbyte message consumer: succeeded.
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.b.BufferedStreamConsumer(close):257 executing on success close procedure.
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):85 Flushing organization_overview: 10 records (31 KB)
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):91 Flushing completed for organization_overview
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):85 Flushing organization: 10 records (31 KB)
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):91 Flushing completed for organization
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):85 Flushing price_history: 10 records (31 KB)
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.r.InMemoryRecordBufferingStrategy(flushAll):91 Flushing completed for price_history
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.j.SqlOperations(onDestinationCloseOperations):154 No onDestinationCloseOperations required for this destination.
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.b.IntegrationRunner(runInternal):186 Completed integration: io.airbyte.integrations.base.ssh.SshWrappedDestination
+2023-05-25 21:24:29 [43mdestination[0m > INFO i.a.i.d.p.PostgresDestination(main):100 completed destination: class io.airbyte.integrations.destination.postgres.PostgresDestination
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(replicate):273 - Source and destination threads complete.
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(getReplicationOutput):561 - sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 30,
+  "bytesSynced" : 7765,
+  "startTime" : 1685049860479,
+  "endTime" : 1685049869242,
+  "totalStats" : {
+    "bytesCommitted" : 7765,
+    "bytesEmitted" : 7765,
+    "destinationStateMessagesEmitted" : 0,
+    "destinationWriteEndTime" : 1685049869242,
+    "destinationWriteStartTime" : 1685049860535,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "recordsEmitted" : 30,
+    "recordsCommitted" : 30,
+    "replicationEndTime" : 1685049869242,
+    "replicationStartTime" : 1685049860479,
+    "sourceReadEndTime" : 1685049869152,
+    "sourceReadStartTime" : 1685049860508,
+    "sourceStateMessagesEmitted" : 0
+  },
+  "streamStats" : [ {
+    "streamName" : "organization_overview",
+    "streamNamespace" : "financial_raw",
+    "stats" : {
+      "bytesCommitted" : 4322,
+      "bytesEmitted" : 4322,
+      "recordsEmitted" : 10,
+      "recordsCommitted" : 10
+    }
+  }, {
+    "streamName" : "organization",
+    "streamNamespace" : "financial_raw",
+    "stats" : {
+      "bytesCommitted" : 2149,
+      "bytesEmitted" : 2149,
+      "recordsEmitted" : 10,
+      "recordsCommitted" : 10
+    }
+  }, {
+    "streamName" : "price_history",
+    "streamNamespace" : "financial_raw",
+    "stats" : {
+      "bytesCommitted" : 1294,
+      "bytesEmitted" : 1294,
+      "recordsEmitted" : 10,
+      "recordsCommitted" : 10
+    }
+  } ]
+}
+2023-05-25 21:24:29 [32mINFO[m i.a.w.g.DefaultReplicationWorker(getReplicationOutput):562 - failures: [ ]
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):163 - Stopping cancellation check scheduling...
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END REPLICATION -----
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.s.ReplicationActivityImpl(lambda$replicate$3):157 - sync summary: io.airbyte.config.StandardSyncOutput@66c3974[standardSyncSummary=io.airbyte.config.StandardSyncSummary@6899601[status=completed,recordsSynced=30,bytesSynced=7765,startTime=1685049860479,endTime=1685049869242,totalStats=io.airbyte.config.SyncStats@6c8fab89[bytesCommitted=7765,bytesEmitted=7765,destinationStateMessagesEmitted=0,destinationWriteEndTime=1685049869242,destinationWriteStartTime=1685049860535,estimatedBytes=<null>,estimatedRecords=<null>,meanSecondsBeforeSourceStateMessageEmitted=0,maxSecondsBeforeSourceStateMessageEmitted=0,maxSecondsBetweenStateMessageEmittedandCommitted=0,meanSecondsBetweenStateMessageEmittedandCommitted=0,recordsEmitted=30,recordsCommitted=30,replicationEndTime=1685049869242,replicationStartTime=1685049860479,sourceReadEndTime=1685049869152,sourceReadStartTime=1685049860508,sourceStateMessagesEmitted=0,additionalProperties={}],streamStats=[io.airbyte.config.StreamSyncStats@6b305109[streamName=organization_overview,streamNamespace=financial_raw,stats=io.airbyte.config.SyncStats@cf07282[bytesCommitted=4322,bytesEmitted=4322,destinationStateMessagesEmitted=<null>,destinationWriteEndTime=<null>,destinationWriteStartTime=<null>,estimatedBytes=<null>,estimatedRecords=<null>,meanSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBetweenStateMessageEmittedandCommitted=<null>,meanSecondsBetweenStateMessageEmittedandCommitted=<null>,recordsEmitted=10,recordsCommitted=10,replicationEndTime=<null>,replicationStartTime=<null>,sourceReadEndTime=<null>,sourceReadStartTime=<null>,sourceStateMessagesEmitted=<null>,additionalProperties={}],additionalProperties={}], io.airbyte.config.StreamSyncStats@4603c483[streamName=organization,streamNamespace=financial_raw,stats=io.airbyte.config.SyncStats@5741fc29[bytesCommitted=2149,bytesEmitted=2149,destinationStateMessagesEmitted=<null>,destinationWriteEndTime=<null>,destinationWriteStartTime=<null>,estimatedBytes=<null>,estimatedRecords=<null>,meanSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBetweenStateMessageEmittedandCommitted=<null>,meanSecondsBetweenStateMessageEmittedandCommitted=<null>,recordsEmitted=10,recordsCommitted=10,replicationEndTime=<null>,replicationStartTime=<null>,sourceReadEndTime=<null>,sourceReadStartTime=<null>,sourceStateMessagesEmitted=<null>,additionalProperties={}],additionalProperties={}], io.airbyte.config.StreamSyncStats@3e9047d1[streamName=price_history,streamNamespace=financial_raw,stats=io.airbyte.config.SyncStats@31fb56e3[bytesCommitted=1294,bytesEmitted=1294,destinationStateMessagesEmitted=<null>,destinationWriteEndTime=<null>,destinationWriteStartTime=<null>,estimatedBytes=<null>,estimatedRecords=<null>,meanSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBeforeSourceStateMessageEmitted=<null>,maxSecondsBetweenStateMessageEmittedandCommitted=<null>,meanSecondsBetweenStateMessageEmittedandCommitted=<null>,recordsEmitted=10,recordsCommitted=10,replicationEndTime=<null>,replicationStartTime=<null>,sourceReadEndTime=<null>,sourceReadStartTime=<null>,sourceStateMessagesEmitted=<null>,additionalProperties={}],additionalProperties={}]],additionalProperties={}],normalizationSummary=<null>,webhookOperationSummary=<null>,state=<null>,outputCatalog=io.airbyte.protocol.models.ConfiguredAirbyteCatalog@6984bb83[streams=[io.airbyte.protocol.models.ConfiguredAirbyteStream@31fcb22e[stream=io.airbyte.protocol.models.AirbyteStream@d6ed50f[name=organization,jsonSchema={"type":"object","properties":{"organName":{"type":"string"},"ticker":{"type":"string"},"organTypeCode":{"type":"string"},"icbCode":{"type":"string"},"organCode":{"type":"string"},"comTypeCode":{"type":"string"},"organShortName":{"type":"string"},"comGroupCode":{"type":"string"}}},supportedSyncModes=[full_refresh],sourceDefinedCursor=<null>,defaultCursorField=[],sourceDefinedPrimaryKey=[[ticker]],namespace=financial_raw,additionalProperties={}],syncMode=full_refresh,cursorField=[],destinationSyncMode=overwrite,primaryKey=[[ticker]],additionalProperties={}], io.airbyte.protocol.models.ConfiguredAirbyteStream@6649d60f[stream=io.airbyte.protocol.models.AirbyteStream@2add21e6[name=price_history,jsonSchema={"type":"object","required":["start_date","end_date"],"properties":{"volume":{"type":"number"},"high":{"type":"number"},"ticker":{"type":"string"},"low":{"type":"number"},"tradingDate":{"type":"string"},"close":{"type":"number"},"open":{"type":"number"}}},supportedSyncModes=[full_refresh],sourceDefinedCursor=<null>,defaultCursorField=[],sourceDefinedPrimaryKey=[],namespace=financial_raw,additionalProperties={}],syncMode=full_refresh,cursorField=[],destinationSyncMode=overwrite,primaryKey=[],additionalProperties={}], io.airbyte.protocol.models.ConfiguredAirbyteStream@7e649b51[stream=io.airbyte.protocol.models.AirbyteStream@5d9ff3f[name=organization_overview,jsonSchema={"type":"object","properties":{"ticker":{"type":"string"},"website":{"type":"string"},"outstandingShare":{"type":"number"},"companyType":{"type":"string"},"deltaInYear":{"type":"number"},"industry":{"type":"string"},"stockRating":{"type":"number"},"industryEn":{"type":"string"},"noEmployees":{"type":"number"},"deltaInWeek":{"type":"number"},"industryID":{"type":"number"},"industryIDv2":{"type":"string"},"exchange":{"type":"string"},"establishedYear":{"type":"string"},"shortName":{"type":"string"},"noShareholders":{"type":"number"},"issueShare":{"type":"number"},"deltaInMonth":{"type":"number"},"foreignPercent":{"type":"number"}}},supportedSyncModes=[full_refresh],sourceDefinedCursor=<null>,defaultCursorField=[],sourceDefinedPrimaryKey=[[ticker]],namespace=financial_raw,additionalProperties={}],syncMode=full_refresh,cursorField=[],destinationSyncMode=overwrite,primaryKey=[[ticker]],additionalProperties={}]],additionalProperties={}],failures=[],commitStateAsap=true,additionalProperties={}]
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.s.ReplicationActivityImpl(lambda$replicate$3):162 - Sync summary length: 5911
+2023-05-25 21:24:29 [32mINFO[m i.a.c.t.TemporalUtils(withBackgroundHeartbeat):307 - Stopping temporal heartbeating...
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.s.NormalizationActivityImpl(lambda$normalize$3):125 - Using protocol v0
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.s.NormalizationActivityImpl(lambda$normalize$3):145 - Using normalization: airbyte/normalization:0.4.0
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):136 - Docker volume job log path: /tmp/workspace/41/0/logs.log
+2023-05-25 21:24:29 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):141 - Executing worker wrapper. Airbyte version: 0.44.1
+2023-05-25 21:24:29 [32mINFO[m i.a.a.c.AirbyteApiClient(retryWithJitter):179 - Attempt 0 to save workflow id for cancellation
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:29 [32mINFO[m i.a.w.n.DefaultNormalizationRunner(runProcess):129 - Running with normalization version: airbyte/normalization:0.4.0
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- START DEFAULT NORMALIZATION -----
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - Checking if airbyte/normalization:0.4.0 exists...
+2023-05-25 21:24:29 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - airbyte/normalization:0.4.0 was found locally.
+2023-05-25 21:24:29 [32mINFO[m i.a.w.p.DockerProcessFactory(create):133 - Creating docker container = normalization-normalize-41-0-gafnz with resources io.airbyte.config.ResourceRequirements@6e198664[cpuRequest=,cpuLimit=,memoryRequest=,memoryLimit=,additionalProperties={}] and allowedHosts null
+2023-05-25 21:24:29 [32mINFO[m i.a.w.p.DockerProcessFactory(create):184 - Preparing command: docker run --rm --init -i -w /data/41/0/normalize --log-driver none --name normalization-normalize-41-0-gafnz --network host -v airbyte_workspace:/data -v /tmp/airbyte_local:/local -e DEPLOYMENT_MODE=OSS -e AIRBYTE_ROLE= -e WORKER_ENVIRONMENT=DOCKER -e AIRBYTE_VERSION=0.44.1 airbyte/normalization:0.4.0 run --integration-type postgres --config destination_config.json --catalog destination_catalog.json
+2023-05-25 21:24:29 [42mnormalization[0m > Running: transform-config --config destination_config.json --integration-type postgres --out /data/41/0/normalize
+2023-05-25 21:24:29 [42mnormalization[0m > Namespace(config='destination_config.json', integration_type=<DestinationType.POSTGRES: 'postgres'>, out='/data/41/0/normalize')
+2023-05-25 21:24:29 [42mnormalization[0m > transform_postgres
+2023-05-25 21:24:29 [42mnormalization[0m > Running: transform-catalog --integration-type postgres --profile-config-dir /data/41/0/normalize --catalog destination_catalog.json --out /data/41/0/normalize/models/generated/ --json-column _airbyte_data
+2023-05-25 21:24:30 [42mnormalization[0m > Processing destination_catalog.json...
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_ab1.sql from organization
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_ab2.sql from organization
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_ab3.sql from organization
+2023-05-25 21:24:30 [42mnormalization[0m >   Adding drop table hook for organization_scd to organization
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_tables/financial_raw/organization.sql from organization
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/price_history_ab1.sql from price_history
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/price_history_ab2.sql from price_history
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/price_history_ab3.sql from price_history
+2023-05-25 21:24:30 [42mnormalization[0m >   Adding drop table hook for price_history_scd to price_history
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_tables/financial_raw/price_history.sql from price_history
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_overview_ab1.sql from organization_overview
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_overview_ab2.sql from organization_overview
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_ctes/financial_raw/organization_overview_ab3.sql from organization_overview
+2023-05-25 21:24:30 [42mnormalization[0m >   Adding drop table hook for organization_overview_scd to organization_overview
+2023-05-25 21:24:30 [42mnormalization[0m >   Generating airbyte_tables/financial_raw/organization_overview.sql from organization_overview
+2023-05-25 21:24:30 [42mnormalization[0m > detected no config file for ssh, assuming ssh is off.
+2023-05-25 21:24:32 [42mnormalization[0m >            [--event-buffer-size EVENT_BUFFER_SIZE]
+2023-05-25 21:24:32 [42mnormalization[0m >   --event-buffer-size EVENT_BUFFER_SIZE
+2023-05-25 21:24:32 [32mINFO[m i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2023-05-25 21:24:32 [42mnormalization[0m > DBT >=1.0.0 detected; using 10K event buffer size
+2023-05-25 21:24:32 [32mINFO[m i.a.w.n.NormalizationAirbyteStreamFactory(filterOutAndHandleNonAirbyteMessageLines):104 - 
+2023-05-25 21:24:34 [42mnormalization[0m > Running with dbt=1.0.0
+2023-05-25 21:24:34 [42mnormalization[0m > Partial parse save file not found. Starting full parse.
+2023-05-25 21:24:35 [42mnormalization[0m > [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.airbyte_utils.generated.airbyte_incremental
+- models.airbyte_utils.generated.airbyte_views
+
+2023-05-25 21:24:35 [42mnormalization[0m > Found 12 models, 0 tests, 0 snapshots, 0 analyses, 601 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2023-05-25 21:24:35 [42mnormalization[0m > Concurrency: 8 threads (target='prod')
+2023-05-25 21:24:35 [42mnormalization[0m > 1 of 3 START table model financial_raw.organization_overview............................................................ [RUN]
+2023-05-25 21:24:35 [42mnormalization[0m > 2 of 3 START table model financial_raw.price_history.................................................................... [RUN]
+2023-05-25 21:24:35 [42mnormalization[0m > 3 of 3 START table model financial_raw.organization..................................................................... [RUN]
+2023-05-25 21:24:36 [42mnormalization[0m > 1 of 3 OK created table model financial_raw.organization_overview....................................................... [[32mSELECT 10[0m in 0.17s]
+2023-05-25 21:24:36 [42mnormalization[0m > 3 of 3 OK created table model financial_raw.organization................................................................ [[32mSELECT 10[0m in 0.17s]
+2023-05-25 21:24:36 [42mnormalization[0m > 2 of 3 OK created table model financial_raw.price_history............................................................... [[32mSELECT 10[0m in 0.18s]
+2023-05-25 21:24:36 [42mnormalization[0m > Finished running 3 table models in 0.49s.
+2023-05-25 21:24:36 [42mnormalization[0m > [32mCompleted successfully[0m
+2023-05-25 21:24:36 [42mnormalization[0m > Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+2023-05-25 21:24:36 [32mINFO[m i.a.w.n.DefaultNormalizationRunner(close):194 - Terminating normalization process...
+2023-05-25 21:24:36 [32mINFO[m i.a.w.n.DefaultNormalizationRunner(close):207 - Normalization process successfully terminated.
+2023-05-25 21:24:36 [32mINFO[m i.a.w.g.DefaultNormalizationWorker(run):97 - Normalization executed in 6 seconds for job 41.
+2023-05-25 21:24:36 [32mINFO[m i.a.w.g.DefaultNormalizationWorker(run):109 - Normalization summary: io.airbyte.config.NormalizationSummary@4d576751[startTime=1685049869312,endTime=1685049876236,failures=[],additionalProperties={}]
+2023-05-25 21:24:36 [32mINFO[m i.a.w.t.TemporalAttemptExecution(get):163 - Stopping cancellation check scheduling...
+2023-05-25 21:24:36 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:36 [32mINFO[m i.a.c.t.TemporalUtils(withBackgroundHeartbeat):307 - Stopping temporal heartbeating...
+2023-05-25 21:24:36 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - ----- END DEFAULT NORMALIZATION -----
+2023-05-25 21:24:36 [32mINFO[m i.a.c.i.LineGobbler(voidCall):149 - 
+2023-05-25 21:24:36 [32mINFO[m i.a.c.t.StreamResetRecordsHelper(deleteStreamResetRecordsForJob):50 - deleteStreamResetRecordsForJob was called for job 41 with config type sync. Returning, as config type is not resetConnection.
