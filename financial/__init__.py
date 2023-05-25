@@ -10,16 +10,8 @@ from financial.assets.airbyte import airbyte_assets
 from financial.jobs import refresh_tcbs_job
 # from financial.schedules import schedules
 
-resources = {
-    "dbt": DbtCliClientResource(
-        project_dir=DBT_PROJECT_PATH,
-        profiles_dir=DBT_PROFILE_PATH,
-    ),
-}
-
 defs = Definitions(
     assets= airbyte_assets + dbt_assets,
-    resources=resources,
     jobs=[refresh_tcbs_job],
 
     schedules=[
