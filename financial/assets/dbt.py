@@ -14,7 +14,7 @@ dbt_assets = with_resources(
         profiles_dir=DBT_PROFILE_PATH, 
         target_dir=DBT_TARGET, 
         source_key_prefix="financial_data",
-        key_prefix="raw",
+        key_prefix="financial_data",
     ),
     {
     "dbt": DbtCliClientResource(
