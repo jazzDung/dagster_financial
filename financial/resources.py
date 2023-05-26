@@ -18,3 +18,11 @@ SMTP = smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context)
 engine = sqlalchemy.create_engine("postgresql://postgres:02092001@localhost:5432/financial_data")
 DB_CONNECTION = engine.connect() 
 metadata = sqlalchemy.MetaData(schema="financial_clean")
+
+def get_query(query):
+    output = DB_CONNECTION.execute(query)
+    try:
+        result = output.fetchall()
+        return [record._asdict() for record in result]
+    except:
+        return True

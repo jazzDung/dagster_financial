@@ -15,6 +15,7 @@ airbyte_assets = with_resources(
         connection_id="af05a274-4391-4233-8b0a-62388dbbb65d",
         destination_tables=["organization", "organization_overview", "price_history"],
         asset_key_prefix=["financial_data", "financial_raw"]
+        # description="Ingest TCBS raw data into database"
     ),
     {"airbyte": airbyte_instance}
 )

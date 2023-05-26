@@ -15,6 +15,8 @@ dbt_assets = with_resources(
         target_dir=DBT_TARGET, 
         source_key_prefix="financial_data",
         key_prefix="financial_data",
+        display_raw_sql=True,
+        # description="Perform cleaning and some transformation"
     ),
     {
     "dbt": DbtCliClientResource(

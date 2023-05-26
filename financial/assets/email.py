@@ -5,6 +5,9 @@ from datetime import datetime
 
 @asset
 def fetch_unchecked():
+    """
+    Find unchecked records
+    """
     output = DB_CONNECTION.execute(
         """
         SELECT * 
@@ -16,6 +19,9 @@ def fetch_unchecked():
 
 @asset
 def send_email(fetch_unchecked):
+    """
+    Send email to user with unchecked records
+    """
 
     SMTP.login(EMAIL_SENDER, EMAIL_PASSWORD)
 
@@ -39,6 +45,9 @@ def default_time():
 
 @asset
 def check_record(send_email):
+    """
+    Alter records after sending email
+    """
     
     for record in send_email:
         id = record['id']

@@ -1,2 +1,4 @@
 tmp*/
 financial/__pycache__/
+financial/assets/__pycache__
+sandbox.ipynb

@@ -1,7 +1,11 @@
 import os
 from dagster import sensor, RunRequest, RunConfig
-from financial.jobs import refresh_tcbs_job
+from financial.resources import DB_CONNECTION
+from financial.jobs import refresh_tcbs_job, send_email_job
 
-# @sensor(job=refresh_tcbs_job, minimum_interval_seconds=30)
-# def new_table_v_sensor():
-#     yield RunRequest(run_key=None, run_config={})
+@sensor(job=send_email_job, minimum_interval_seconds=60)
+def new_table_modification_sensor():
+    output = DB_CONNECTION.execute("SELECT exists (SELECT 1 FROM financial_clean.user_query WHERE checked = False LIMIT 1);")
+    if output.fetchall()[0][0]:
+        yield RunRequest(run_key=None, run_config={})
+    
