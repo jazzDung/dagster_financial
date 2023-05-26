@@ -8,7 +8,12 @@ setup(
         "dagster-cloud",
         "dagster-airbyte",
         "dagster-dbt",
-        "dbt-postgres"
+        "dbt-postgres",
+        "sqlalchemy<2.0",
+        "email",
+        "json",
+        "smtplib",
+        "ssl"
     ],
     extras_require={"dev": ["dagit", "pytest"]},
 )
