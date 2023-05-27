@@ -7,6 +7,6 @@ refresh_tcbs_job = define_asset_job(
 
 send_email_job = define_asset_job(
     name="send_email_for_unchecked_query", 
-    selection="check_record"
+    selection=["fetch_unchecked", "send_email", "check_record"]
 )
 
