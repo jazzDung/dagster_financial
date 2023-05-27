@@ -13,10 +13,9 @@ dbt_assets = with_resources(
         project_dir=DBT_PROJECT_DIR, 
         profiles_dir=DBT_PROFILE_PATH, 
         target_dir=DBT_TARGET, 
-        source_key_prefix="financial_data",
-        key_prefix="financial_data",
+        source_key_prefix="financial_data", 
+        key_prefix="financial_data", 
         display_raw_sql=True,
-        # description="Perform cleaning and some transformation"
     ),
     {
     "dbt": DbtCliClientResource(
