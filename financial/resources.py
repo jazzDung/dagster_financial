@@ -11,12 +11,13 @@ f.close()
 context = ssl.create_default_context() 
 SMTP = smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context)
 
-# Get database connection
+# Get database info
 f = open('financial/secret/postgres.json')
 data = json.load(f)
 DB_URL = data['url']
 f.close()
 
+# Setup connection
 engine = sqlalchemy.create_engine(DB_URL)
 DB_CONNECTION = engine.connect() 
 # metadata = sqlalchemy.MetaData(schema="financial_clean")

@@ -22,7 +22,6 @@ def send_email(fetch_unchecked):
     """
     Send email to user with unchecked records
     """
-
     SMTP.login(EMAIL_SENDER, EMAIL_PASSWORD)
 
     for record in fetch_unchecked:
@@ -40,18 +39,14 @@ def send_email(fetch_unchecked):
     
     return fetch_unchecked
 
-def default_time():
-    return str(datetime.now())[:-7]+"+07"
-
 @asset
 def check_record(send_email):
     """
     Alter records after sending email
     """
-    
     for record in send_email:
         id = record['id']
-        now = default_time()
+        now = str(datetime.now())[:-7]+"+07"
 
         DB_CONNECTION.execute(
             f"""
@@ -61,9 +56,3 @@ def check_record(send_email):
                 last_checked = '{now}'
             WHERE id = {id};
             """)
-
-# @asset
-# def email_for_unchecked(check_record):
-#     records = fetch_unchecked()
-#     send_email(records)
-#     check_record(send_email)
