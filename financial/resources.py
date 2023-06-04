@@ -29,3 +29,10 @@ def get_query(query):
         return [record._asdict() for record in result]
     except:
         return True
+
+# Airbyte connection
+f = open('financial/secret/airbyte.json')
+data = json.load(f)
+AIRBYTE_USERNAME = data['username']
+AIRBYTE_PASSWORD = data['password']
+f.close()

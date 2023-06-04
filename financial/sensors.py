@@ -1,7 +1,7 @@
 import os
 from dagster import sensor, RunRequest, RunConfig, SkipReason
 from financial.resources import DB_CONNECTION
-from financial.jobs import refresh_tcbs_job, send_email_job
+from financial.jobs import ingest_all_job, send_email_job
 
 @sensor(job=send_email_job, minimum_interval_seconds=60)
 def unchecked_records_exist():
