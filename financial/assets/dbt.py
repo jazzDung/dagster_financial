@@ -1,6 +1,6 @@
 import os
 
-from dagster import file_relative_path, with_resources
+from dagster import file_relative_path, with_resources, asset
 from dagster_dbt import DbtCliClientResource, load_assets_from_dbt_project
 
 DBT_PROJECT_PATH = "/home/jazzdung/projects/dbt_financial"
@@ -13,8 +13,7 @@ dbt_assets = with_resources(
         project_dir=DBT_PROJECT_DIR, 
         profiles_dir=DBT_PROFILE_PATH, 
         target_dir=DBT_TARGET, 
-        source_key_prefix="financial_data",
-        key_prefix="financial_data",
+        display_raw_sql=True,
     ),
     {
     "dbt": DbtCliClientResource(
