@@ -22,6 +22,13 @@ ingest_stock_history_job = define_asset_job(
         .upstream()
         .required_multi_asset_neighbors()
     )
+ingest_cash_flow_job = define_asset_job(
+    name="INGEST_CASH_FLOW", 
+    description="Ingest organization cash flow reports, this job run at the start every quarte",
+    selection= AssetSelection.keys("financial_clean/dim_cash_flow")
+        .upstream()
+        .required_multi_asset_neighbors()
+    )
 
 ingest_org_overview_job = define_asset_job(
     name="INGEST_ORGANIZATION_OVERVIEW", 
