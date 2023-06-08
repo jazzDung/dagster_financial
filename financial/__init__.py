@@ -22,7 +22,10 @@ defs = Definitions(
         send_email_job, 
         ingest_stock_history_job, 
         ingest_org_overview_job,
-        ingest_cash_flow_job
+        ingest_cash_flow_job,
+        ingest_balance_sheet_job,
+        ingest_income_statement_job,
+        ingest_general_rating_job
     ],
         
     sensors=[

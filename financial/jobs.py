@@ -24,15 +24,39 @@ ingest_stock_history_job = define_asset_job(
     )
 ingest_cash_flow_job = define_asset_job(
     name="INGEST_CASH_FLOW", 
-    description="Ingest organization cash flow reports, this job run at the start every quarte",
+    description="Ingest organization cash flow reports, this job run at the start every quarter",
     selection= AssetSelection.keys("financial_clean/dim_cash_flow")
+        .upstream()
+        .required_multi_asset_neighbors()
+    )
+
+ingest_balance_sheet_job = define_asset_job(
+    name="INGEST_BALANCE_SHEET", 
+    description="Ingest organization balance sheet reports, this job run at the start every quarter",
+    selection= AssetSelection.keys("financial_clean/dim_balance_sheet")
+        .upstream()
+        .required_multi_asset_neighbors()
+    )
+
+ingest_income_statement_job = define_asset_job(
+    name="INGEST_INCOME_STATEMENT", 
+    description="Ingest organization income statement reports, this job run at the start every quarter",
+    selection= AssetSelection.keys("financial_clean/dim_income_statement")
+        .upstream()
+        .required_multi_asset_neighbors()
+    )
+
+ingest_general_rating_job = define_asset_job(
+    name="INGEST_GENERAL_RATING", 
+    description="Ingest organization general rating",
+    selection= AssetSelection.keys("financial_clean/dim_general_rating")
         .upstream()
         .required_multi_asset_neighbors()
     )
 
 ingest_org_overview_job = define_asset_job(
     name="INGEST_ORGANIZATION_OVERVIEW", 
-    description="Ingest organization overview information, this job run at the start every quarter",
+    description="Ingest organization overview information, this job run at the start every quarterr",
     selection= AssetSelection.keys("financial_clean/dim_organization_overview")
         .upstream()
         .required_multi_asset_neighbors()
