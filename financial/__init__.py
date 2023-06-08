@@ -1,8 +1,4 @@
-import os
-
-from dagster import (
-    Definitions, ScheduleDefinition, AssetSelection
-)
+from dagster import Definitions
 from financial.assets.dbt import *
 from financial.assets.airbyte import *
 from financial.assets.email import *
@@ -11,7 +7,7 @@ from financial.jobs import *
 from financial.schedules import *
 
 defs = Definitions(
-    assets= (
+    assets=(
         [airbyte_assets] + 
         [fetch_unchecked, send_email, check_record] +
         dbt_assets

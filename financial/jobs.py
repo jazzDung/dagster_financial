@@ -1,5 +1,4 @@
 from dagster import define_asset_job, AssetSelection
-from financial.assets.airbyte import *
 
 ingest_all_job = define_asset_job(
     name="INGEST_EVERYTHING_EVERYWHERE_ALL_AT_ONCE",
@@ -22,6 +21,7 @@ ingest_stock_history_job = define_asset_job(
         .upstream()
         .required_multi_asset_neighbors()
     )
+
 ingest_cash_flow_job = define_asset_job(
     name="INGEST_CASH_FLOW", 
     description="Ingest organization cash flow reports, this job run at the start every quarter",

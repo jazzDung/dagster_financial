@@ -1,6 +1,6 @@
 from financial.resources import EMAIL_SENDER, EMAIL_PASSWORD, DB_CONNECTION, SMTP
 from email.message import EmailMessage
-from dagster import asset, AssetIn
+from dagster import asset
 from datetime import datetime
 
 @asset(group_name="email")
@@ -23,7 +23,8 @@ def send_email(fetch_unchecked):
     Send email to user with unchecked records
     """
     SMTP.login(EMAIL_SENDER, EMAIL_PASSWORD)
-
+    
+    # TODO: Implement try except for when email is invalid
     for record in fetch_unchecked:
         body = record['mail_subject'] or "BLANK mail_subject"
         receiver = record['email']
@@ -36,7 +37,8 @@ def send_email(fetch_unchecked):
         em.set_content(body)
 
         SMTP.sendmail(EMAIL_SENDER, receiver, em.as_string())
-    
+
+    SMTP.quit()
     return fetch_unchecked
 
 @asset(group_name="email")

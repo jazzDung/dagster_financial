@@ -1,6 +1,5 @@
 import os
-
-from dagster import file_relative_path, with_resources, asset
+from dagster import file_relative_path, with_resources
 from dagster_dbt import DbtCliClientResource, load_assets_from_dbt_project
 
 DBT_PROJECT_PATH = "/home/jazzdung/projects/dbt_financial"

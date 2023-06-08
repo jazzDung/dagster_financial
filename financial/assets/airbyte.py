@@ -1,5 +1,5 @@
-from dagster import AssetKey, with_resources, asset
-from dagster_airbyte import airbyte_resource, load_assets_from_airbyte_instance, build_airbyte_assets
+from dagster import AssetKey
+from dagster_airbyte import airbyte_resource, load_assets_from_airbyte_instance
 from financial.resources import AIRBYTE_PASSWORD, AIRBYTE_USERNAME
 
 airbyte_instance = airbyte_resource.configured(
