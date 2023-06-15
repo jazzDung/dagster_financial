@@ -20,7 +20,7 @@ f.close()
 # Setup connection
 engine = sqlalchemy.create_engine(DB_URL)
 DB_CONNECTION = engine.connect() 
-# metadata = sqlalchemy.MetaData(schema="financial_clean")
+
 
 def get_query(query):
     output = DB_CONNECTION.execute(query)

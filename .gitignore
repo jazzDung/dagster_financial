@@ -2,6 +2,7 @@
 tmp*/
 __pycache__/
 secret/
+.venv/
 
 # Files
 sandbox.ipynb
